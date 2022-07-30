@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// https://leetcode.cn/problems/3sum/
+
 public class _15_threeSum {
     public static void main(String[] args) {
         int[] nums = new int[] {-2,0,0,2,2};
