@@ -7,24 +7,29 @@ package com.isa.highFrequency;
   */
 public class _283_moveZeroes {
     public static void main(String[] args) {
-        int[] nums = new int[] {0, 1, 0, 3, 5};
-        moveZeroes(nums);
+        int[] numbs = new int[] {0, 1, 0, 3, 5};
+        moveZeroes(numbs);
     }
 
     // considering to use two pointers
     public static void moveZeroes(int[] nums) {
-        int start = 0;
-        int pos = start;
+        if (nums == null || nums.length == 1)
+            return;
 
         // scan the array from index 0 一个一个查找0
-        while (start <= nums.length - 1) {
-            // 如果 left 是 0
-            if (nums[start++] == 0)
+        for (int start = 0, pos = 0; start <= nums.length - 1; start++) {
+            if (nums[start] == 0) { // nums[start++] == 0 is wrong
                 continue;
-
-            // 找到非 0 元素, i.e, [0 0 0 1 3] start = 3, switch [0] <-> [3] 需要记录第一个 0 的 index
-            nums[pos++] = nums[start]; // [pos] 赋值后，向后移动 [1 0 0 1 3], pos += 1
-            nums[start++] = 0; // [1 0 0 0 3] start = 4
+            }
+            System.out.println("pos: " + pos + ", start: " + start);
+            // 找到非 0 元素, i.e, [0 0 0 1 3] start = 3,
+            // switch [0] <-> [3] 需要记录第一个 0 的 index
+            if (pos != start) { // 两个位置不相等 才需要交换！
+                nums[pos] = nums[start]; // [pos] 赋值后，向后移动 [1 0 0 1 3]
+                nums[start] = 0;
+            }
+            pos++;
+            System.out.println("--- pos: " + pos + ", start: " + start);
         }
     }
 }

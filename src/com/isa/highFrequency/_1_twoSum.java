@@ -17,12 +17,28 @@ public class _1_twoSum {
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
+            // 如果包含和当前 num 相加 == target 的数，即所求 result
             if (map.containsKey(target - nums[i])) {
                 return new int[] {map.get(target - nums[i]), i};
             }
             // Integer index = map.get(target - nums[i]); // the same result
             // if (index != null) return new int[] {index, i};
 
+            // 来到这里说明map 里没有当前 num，则put 进 map
+            map.put(nums[i], i);
+        }
+        return new int[] {};
+    }
+
+    public int[] twoSum2(int[] nums, int target) {
+        // map 记录 [num, index of num]
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // loop
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) { // 如果包含和当前 num 相加 == target 的数，即所求 result
+                Integer subtractIdx = map.get(target - nums[i]);
+                return new int[] {subtractIdx, i };
+            }
             map.put(nums[i], i);
         }
         return new int[] {};

@@ -15,7 +15,6 @@ public class _15_threeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         if (nums == null) return null;
         List<List<Integer>> result = new ArrayList<>();
-
         // sort first, so the smallest item is at the begin while the biggest is at the end.
         Arrays.sort(nums);
 
