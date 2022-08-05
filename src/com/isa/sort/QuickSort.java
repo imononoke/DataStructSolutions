@@ -36,7 +36,7 @@ public class QuickSort {
             while (begin < end) {
                 if (p < array[end]) { // end 比 p 大，则 end--
                     end--;
-                } else {
+                } else { // end is less than p, move the end to left end
                     array[begin++] = array[end];
                     break;
                 }
@@ -46,7 +46,7 @@ public class QuickSort {
             while (begin < end) {
                 if (p > array[begin]) {
                     begin++;
-                } else {
+                } else { // the begin is bigger than p, move the begin to right end
                     array[end--] = array[begin];
                     break;
                 }
@@ -55,5 +55,30 @@ public class QuickSort {
         // 轴点 value 换回备份值
         array[begin] = p;
         return begin;
+    }
+
+
+    public void getPilot(int begin, int end) {
+        int p = array[begin];
+
+        while (begin < end) {
+            while (begin < end) {
+                if (p < array[end]) {
+                    end--;
+                } else {
+                    array[begin++] = array[end]; // move to the right
+                    break;
+                }
+            }
+
+            while (begin < end) {
+                if (p > array[begin]) {
+                    begin++;
+                } else { // p is less than the begin
+                    array[begin] = array[end--];
+                    break;
+                }
+            }
+        }
     }
 }

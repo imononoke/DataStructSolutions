@@ -1,9 +1,35 @@
 package com.isa.dp;
 
+/**
+ * https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/
+ */
 public class _121_maxProfit {
     public static void main(String[] args) {
         int[] prices = new int[] {1, 4, 2};
         int ret = maxProfit(prices);
+    }
+
+    public int maxProfit2(int[] prices) {
+        if (prices == null) return 0;
+
+        // diff array
+        int[] diff = new int[prices.length];
+        for (int i = 0; i < prices.length - 1; i++) {
+            diff[i] = prices[i + 1] - prices[i];
+        }
+
+        return getProfit(diff);
+    }
+
+    private int getProfit(int[] diff) {
+        int max = 0;
+        for (int i = 0; i < diff.length; i++) {
+            if (diff[i] > 0) {
+                max += diff[i];
+            }
+//            max = Math.max(max, diff[i]);
+        }
+        return max;
     }
 
     public static int maxProfit(int[] prices) {

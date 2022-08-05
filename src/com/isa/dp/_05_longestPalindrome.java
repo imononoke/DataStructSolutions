@@ -8,6 +8,36 @@ public class _05_longestPalindrome {
         System.out.println(res);
     }
 
+    /**
+     * dp[i][j] means whether s[i, j] is palindrome
+     * @param s
+     * @return
+     */
+    public String longestPalindrome0805(String s) {
+        if (s == null) return null;
+        if (s.length() == 0) return "";
+        int len = s.length();
+        char[] chars = s.toCharArray();
+        int startIdx = 0;
+        int maxLen = 0;
+
+        boolean dp[][] = new boolean[len][len];
+        // string 的 index 是从小往大变化，所以s[i, j] j >= i 才有意义，so dp[][] 只有上半部有数据
+        for (int i = len - 1; i >= 0; i--) {
+            for (int j = i; j < len; j++) {
+                int length = j - i + 1;
+                dp[i][j] = chars[i] == chars[j]
+                        && ((length <= 2) || dp[i + 1][j - 1]);
+                if (dp[i][j] && length > maxLen) {
+                    maxLen = length;
+                    startIdx = i;
+                }
+            }
+        }
+        return s.substring(startIdx, startIdx + maxLen);
+    }
+
+
     public static String longestPalindrome(String s) {
         if (s == null) return null;
 
