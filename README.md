@@ -30,3 +30,9 @@ for Array, Dp, List, Tree, Sort and so on.
 
 [Sort](https://github.com/imononoke/DataStructSolutions/tree/main/src/com/isa/sort)
 
+## Extra
+
+[HackerRank](https://github.com/imononoke/DataStructSolutions/tree/main/src/com/isa/hackerrank)
+
+-[MaxPassengers](https://github.com/imononoke/DataStructSolutions/tree/main/src/com/isa/hackerrank/MaxPassengers.java)
+
