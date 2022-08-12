@@ -15,9 +15,9 @@ public class _17_letterCombinations {
     }
 
     private static char[][] lettersArray = new char[][] {
-            {'a', 'b', 'c'}, {'d', 'e', 'f'},
-            {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'},
-            {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'},
+            {'a', 'b', 'c'}, {'d', 'e', 'f'}, //  2，3
+            {'g', 'h', 'i'}, {'j', 'k', 'l'}, {'m', 'n', 'o'}, // 4， 5， 6
+            {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}, // 7，8，9
     };
 
     private static List<String> res;

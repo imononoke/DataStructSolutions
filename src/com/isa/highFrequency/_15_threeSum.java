@@ -18,7 +18,7 @@ public class _15_threeSum {
         // sort first, so the smallest item is at the begin while the biggest is at the end.
         Arrays.sort(nums);
 
-        // 用到收尾两个指针
+        // 用到首尾两个指针
         // let nums[i] as the first number of array
         for (int i = 0; i <= nums.length - 3; i++) {
             // i - remove duplicates

@@ -59,7 +59,6 @@ public class _47_permuteUnique {
 
             // reset status
             selected[i] = false;
-            if (i < nums.length - 1 && nums[i + 1] == nums[i]) continue;
         }
     }
 }
