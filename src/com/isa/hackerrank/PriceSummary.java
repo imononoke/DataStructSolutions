@@ -106,7 +106,6 @@ public class PriceSummary {
             total = total.add(bigDecimal);
         }
         result.append(SYMBOL_EURO).append(total.doubleValue()).append(APPROX).append("\n");
-
         return result.toString();
     }
 
